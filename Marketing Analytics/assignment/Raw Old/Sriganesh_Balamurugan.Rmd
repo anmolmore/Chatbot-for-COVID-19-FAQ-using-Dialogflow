@@ -6,11 +6,11 @@ output:
   word_document: default
 ---
 
+Anmol More – 11915043
+
 Sriganesh Balamurugan – 11915001
 
 Raghu Punnamraju – 11915010
-
-Anmol More – 11915043
 
 Ref : 
 - https://www.r-bloggers.com/finding-optimal-number-of-clusters/
@@ -29,12 +29,6 @@ library(Hmisc)
 library(rpart)
 library(rpart.plot)
 library(randomForest)
-
-#for additional plots
-library(XML)
-library(reshape2)
-library(plyr)
-library(ggplot2)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -49,7 +43,7 @@ conjoint_data <- readxl::read_excel('Beer Partworth Data.xls', sheet = 'Conjoint
 conjoint_data <- conjoint_data[,-c(1)]
 ```
 
-### First we apply various clustering algorithms to come up with best K.
+# First we apply various clustering algorithms to come up with best K.
 
 In order to find best K, we looked at within cluster and between cluster Sum of square differences for k. 
 
@@ -96,27 +90,26 @@ fviz_nbclust(conjoint_data, kmeans, method = "gap_stat")
 
 ## 2.	Use the Descriptors in the Demographic data sheet to perform classification (use any supervised learning technique) based on segments obtained in Step 1 and personify /describe each segment.
 
-### Read demographics data and apply clusters obtained from conjoint data on Demographics data
+# Read demographics data and apply clusters obtained from conjoint data on Demographics data
 
 ```{r}
 demographics_data <- readxl::read_excel('Beer Partworth Data.xls', sheet = 'Demographics', skip=3, n_max = 317)
 
 #use two clusters
-conjoint_data_cluster <- kmeans(conjoint_data, 2)$cluster
-demographics_data$Cluster <- conjoint_data_cluster
+demographics_data$Cluster <- kmeans(conjoint_data, 2)$cluster
 
 #skip first column containing ID of respondents and clusters from conjoint data
 data <- demographics_data[,-c(1)]
 ```
 
-### Let's plot various column to understand the distribution
+# Let's plot various column to understand the distribution
 
 ```{r}
 #correlation plot surprisingly doesn't shows much correlation between Age, Income, Education or even with cluster (the target variable)
 corrplot(cor(data), method = "number")
 ```
 
-### we see from above correlation plot that, our clusters are not correlated to any variables, to some extent age, income and education are weakly correlated
+# we see from above correlation plot that, our clusters are not correlated to any variables, to some extent age, income and education are weakly correlated
 
 Let us try to divide two set of people
 
@@ -129,34 +122,15 @@ names(data) <- c('Weekly_Consumption', 'Age_Group',	'Income_Group',	'Education_G
 Plot each variable against no. of clusters defined to identify reltionships
 
 ```{r plot cluster vs other columns}
+plot(data[,c(1,6)], aes('Weekly consumption','Cluster'))
 
-pldata = data
+plot(data[,c(2,6)], aes('Age Group (1-7)','Cluster'))
 
-#Weekly_Consumption vs Cluster
-dat <- data.frame(table(pldata$Weekly_Consumption,pldata$Cluster))
-names(dat) <- c("Weekly_Consumption","Cluster","Count")
-ggplot(data=dat, aes(x=Weekly_Consumption, y=Count, fill=Cluster)) + geom_bar(stat="identity")
+plot(data[,c(3,6)], aes('Income Group (1-7)','Cluster'))
 
-#Age_group vs Cluster
-dat <- data.frame(table(pldata$Age_Group,pldata$Cluster))
-names(dat) <- c("Age_group","Cluster","Count")
-ggplot(data=dat, aes(x=Age_group, y=Count, fill=Cluster)) + geom_bar(stat="identity")
+plot(data[,c(4,6)], aes('Education','Cluster'))
 
-#Income_Group vs Cluster
-dat <- data.frame(table(pldata$Income_Group,pldata$Cluster))
-names(dat) <- c("Income_Group","Cluster","Count")
-ggplot(data=dat, aes(x=Income_Group, y=Count, fill=Cluster)) + geom_bar(stat="identity")
-
-#Education_Group vs Cluster
-dat <- data.frame(table(pldata$Education_Group,pldata$Cluster))
-names(dat) <- c("Education_Group","Cluster","Count")
-ggplot(data=dat, aes(x=Education_Group, y=Count, fill=Cluster)) + geom_bar(stat="identity")
-
-#Sex vs Cluster
-dat <- data.frame(table(pldata$Sex,pldata$Cluster))
-names(dat) <- c("Sex","Cluster","Count")
-ggplot(data=dat, aes(x=Sex, y=Count, fill=Cluster)) + geom_bar(stat="identity")
-
+plot(data[,c(5,6)], aes('Sex','Cluster'))
 ```
 
 
@@ -166,9 +140,7 @@ check summary of data to understand distribution of each of the variables
 describe(data)
 ```
 
-### Run random forest 
-
-supervised learning technique to classify data
+Run random forest supervised learning technique to classify data
 
 ```{r run random forest}
 data <- read.csv("clustering data.csv", colClasses=c('numeric', 'factor', 'factor', 'factor', 'factor', 'factor'))
@@ -177,7 +149,7 @@ random_forest_tree = randomForest(Cluster~., data = data)
 summary(random_forest_tree)
 ```
 
-### Run gradient boosted trees
+Run gradient boosted trees
 
 ```{r run gradient boosted trees}
 library(gbm)
@@ -218,31 +190,6 @@ tree <- rpart(Cluster~Weekly_Consumption, data = subset_data)
 
 # Visualize tree for weekly consumption in older age group
 rpart.plot(tree, box.palette="RdBu", shadow.col="gray")
-```
-
-plot pyramid graph to see what are most important attributes for customers in each cluster.
-
-Important observations - 
-
-People in cluster 2 prefer - Japanese & European. Brown label, mild and very mild beers
-
-People in cluster 1 prefer - Brown painted, Cannadian beers
-
-```{r}
-#copy conjoint data to new dataframe
-cd = conjoint_data
-
-#assign clusters calculated
-cd$Cluster = conjoint_data_cluster
-
-dd = cbind(cd[22], stack(cd[-22]))
-dd$Cluster = as.factor(dd$Cluster)
-
-pyramidGH <- ggplot(dd, aes(x = ind, y = values, fill = Cluster)) + 
-  geom_bar(data = subset(dd, Cluster == 1), stat = "identity") + 
-  geom_bar(data = subset(dd, Cluster == 2), stat = "identity") + 
-  coord_flip()
-pyramidGH
 ```
 
 Finally we can divide the whole data in two groups -
