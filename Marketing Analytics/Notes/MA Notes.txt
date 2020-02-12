@@ -11,10 +11,17 @@ Types of conjoint analysis (Conjoint introduction pdf session 1) -
 2. Full profile (ratings based) card sort - Factorial design, use different cards and ask prefere
 3. Hybrid - Ratings from respondents for preferences (part-worth) and also importance of attribute
 			And then pair wise questions are asked for preference
-4. Discrete choice modeling - Shown 4 cards, which one, which one, like that Choice based conjoint
+4. Discrete choice \
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' - Shown 4 cards, which one, which one, like that Choice based conjoint
 
 
 
+
+Segmentations - 
+Loyal customers
+Competitive segment
+Switchable segment
+Competitor loyal segment (lost)
 
 
 
