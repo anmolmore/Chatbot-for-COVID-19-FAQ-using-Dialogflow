@@ -1,0 +1,51 @@
+organizations might begin to see impacts across the supply chain, including:  
+1.  Materials: Supply shortages of materials or finished goods coming from or routed through logistical hubs in impacted areas.
+2. Labor: White- and blue-collar labor may not be available due to quarantine guidelines or illness. 
+3. Sourcing: Travel may be restricted to certain areas, limiting the ability to discover, qualify and certify new business or programs and to transact business. 
+4. Logistics: Established hubs and supply networks may experience limitations in capacity and availability so that even if materials are available, they would be stuck elsewhere. Finding alternative routes and means of transportation will become difficult.
+5. Consumers: Consumers may be more cautious in their purchasing habits due to fears about being in public and potential exposure to the virus. Many may turn to online sales, challenging logistics networks.
+
+Actions :
+Short-term actions: Do it now
+Midterm actions: Do it this quarter
+Long-term actions: Do it this year
+
+Ref : https://www.gartner.com/smarterwithgartner/coronavirus-how-to-secure-your-supply-chain/
+
+1. Create transparency on multitier supply chains, establishing a list of critical components, determining the origin of supply, and identifying alternative sources.
+2. Estimate available inventory along the value chain—including spare parts and after-sales stock—for use as a bridge to keep production running and enable delivery to customers.
+3. Assess realistic final-customer demand and respond to (or, where possible, contain) shortage-buying behavior of customers.
+4. Optimize production and distribution capacity to ensure employee safety, such as by supplying personal protective equipment (PPE) and engaging with communication teams to share infection-risk levels and work-from-home options. These steps will enable leaders to understand current and projected capacity levels in both workforce and materials.
+5. Identify and secure logistics capacity, estimating capacity and accelerating, where possible, and being flexible on transportation mode, when required.
+6. Manage cash and net working capital by running stress tests to understand where supply-chain issues will start to cause a financial impact.
+
+https://www.mckinsey.com/business-functions/operations/our-insights/supply-chain-recovery-in-coronavirus-times-plan-for-now-and-the-future
+
+Four pieces of supply chain -
+Inventory
+Transportation
+Facility
+Information
+
+Structural changes for improving product flow -
+- Development of a procedure for week-week fluctuations
+- Reduction of times lags
+- Reduction of lead times
+- Allowing single participant control over movement of goods by tra sferring decison rights to that participants
+
+Safety inventory, ss = ROP (Reorder point) – DxL (Expected demand during lead time)
+
+Important Note - If your demand during lead time is less than reorder point, then you fulfill
+
+
+Odds of response --> Session 4 logit tutorial
+p is the probability of an event happening (e.g., a person buying)
+p/(1-p) is the called the "odds”
+
+Odds  = probability it will happen/probability it won’t happen
+If there is a 50% probability of response, the odds of response are .5/.5 = 1 (for every responder, there is a non-responder) 
+If there is a 25% probability of response, the odds of response are .25/.75 = .33
+
+
+Session 2 - Slide 3 - Financial measure of performance
+Session 2 - Slide 10 - Design considerations for supply chain drivers
