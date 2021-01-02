@@ -1,0 +1,14 @@
+
+DMG2/DMG 2 Slides Part 1/Session 5 - Bayesian Classifiers (1).pptx
+DMG2/DMG Slides part 2/Session 11 - Reasoning (4).pptx
+Deep learning/PPTs/image_classification_demo.zip
+AAI/.ipynb_checkpoints/*.ipynb
+AAI/assignment/.ipynb_checkpoints/*.ipynb
+DMG2/assignment/.ipynb_checkpoints/*.ipynb
+node_modules/*
+
+*.joblib
+AAI/assignment/__pycache__/api.cpython-37.pyc
+DMG2/assignment/.ipynb_checkpoints/Anmol_More-checkpoint.ipynb
+DMG2/assignment/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+DMG2/assignment/.ipynb_checkpoints/Anmol_More-checkpoint.ipynb

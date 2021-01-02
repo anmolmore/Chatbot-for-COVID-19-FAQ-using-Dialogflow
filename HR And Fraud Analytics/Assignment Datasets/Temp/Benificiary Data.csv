@@ -1,0 +1,26 @@
+Variable ,Meaning
+Beneficiary_ID,Benificiary ID
+DOB,Date of Birth
+DOD,Date of Death
+Gender,Gender
+Race,Race
+RenalDiseaseIndicator,"0 If no renal disease,              Y if there is a renal disease"
+State,State
+County,County
+NoOfMonths_PartACov,Total months before Clearance of amount Part A Cover
+NoOfMonths_PartBCov,Total months before Clearance of amount Part B Cover
+ChronicCond_Alzheimer,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_Heartfailure,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_KidneyDisease,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_Cancer,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_ObstrPulmonary,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_Depression,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_Diabetes,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_IschemicHeart,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_Osteoporasis,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_rheumatoidarthritis,"1 if there is a Disease,            2 if there no diesease"
+ChronicCond_stroke,"1 if there is a Disease,            2 if there no diesease"
+IPAnnualReimbursementAmt,Annual Reimbursement Amt for pateint admitted
+IPAnnualDeductibleAmt,Annual Deductible Amt for patient admitted
+OPAnnualReimbursementAmt,Annual Reimbursement Amt for pateint not admitted
+OPAnnualDeductibleAmt,Annual Deductible Amt for patient not admitted
